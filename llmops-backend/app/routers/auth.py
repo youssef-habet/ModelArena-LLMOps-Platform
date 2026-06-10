@@ -72,7 +72,7 @@ async def register(payload: AuthRequest):
 @router.post("/login", response_model=AuthResponse)
 async def login(payload: AuthRequest):
     email = payload.email.strip().lower()
-    response = supabase.table("users").select("id,email,password_hash").eq("email", email).execute()
+    response = supabase.table("users").select("id,email,password_hash,full_name,avatar_url").eq("email", email).execute()
 
     if not response.data or not verify_password(payload.password, response.data[0]["password_hash"]):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")

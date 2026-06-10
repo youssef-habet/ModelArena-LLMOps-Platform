@@ -37,5 +37,13 @@ export const modelsApi = {
 
   delete: async (id: string): Promise<void> => {
     await apiClient.delete(`/models/${id}`);
+  },
+  
+  chat: async (id: string, message: string, history: any[] = []) => {
+    const response = await apiClient.post(`/models/${id}/chat`, { 
+      message,
+      history
+    });
+    return response.data;
   }
 };

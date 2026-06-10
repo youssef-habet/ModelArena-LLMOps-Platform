@@ -43,6 +43,19 @@ export default function DashboardPage() {
   const [data, setData] = useState<DashboardData>(emptyData);
   const [isLoading, setIsLoading] = useState(true);
 
+  // SMART NAME EXTRACTOR
+  const u = user as any; 
+  const userName = 
+    u?.user_metadata?.full_name || 
+    u?.name || 
+    u?.full_name || 
+    (u?.email ? u.email.split('@')[0] : '');
+
+  // Formats "youssef habet" into "Youssef Habet"
+  const formattedName = userName 
+    ? userName.split(' ').map((n: string) => n.charAt(0).toUpperCase() + n.slice(1)).join(' ') 
+    : '';
+
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
@@ -112,9 +125,12 @@ export default function DashboardPage() {
     <div className="max-w-6xl mx-auto space-y-8 pb-12 animate-fade-in">
       <section className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-sm text-gray-500">Welcome back</p>
+          <p className="text-sm text-gray-500">
+            Welcome back
+          </p>
+          {/* CHANGED: Name is now the giant H1 title! Falls back to 'Your workspace' if missing */}
           <h1 className="mt-1 text-3xl font-semibold tracking-tight text-white">
-            {user?.full_name || user?.email || 'Your workspace'}
+            {formattedName || 'Your workspace'}
           </h1>
           <p className="mt-2 text-sm text-gray-400">Review your LLMOps assets, recent runs, and next actions.</p>
         </div>

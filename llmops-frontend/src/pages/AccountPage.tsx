@@ -51,7 +51,7 @@ export default function AccountPage() {
               </div>
             )}
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold text-white">{user?.full_name || 'Unnamed user'}</p>
+              <p className="truncate text-sm font-semibold text-white">{user?.full_name}</p>
               <p className="truncate text-xs text-gray-500">{user?.email}</p>
             </div>
           </div>
