@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { type Evaluation } from '../../api/evaluationsApi';
 import { type AIModel } from '../../api/modelsApi';
 import { type Dataset } from '../../api/datasetsApi';

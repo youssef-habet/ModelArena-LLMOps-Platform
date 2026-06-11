@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { metricsApi, type Metric } from '../../api/metricsApi';
 
 interface DeleteMetricModalProps {

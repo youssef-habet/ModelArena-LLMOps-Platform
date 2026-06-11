@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { evaluationsApi, type Evaluation } from '../../api/evaluationsApi';
 
 interface DeleteEvaluationModalProps {

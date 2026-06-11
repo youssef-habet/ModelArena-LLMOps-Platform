@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { updateModel } from '../../store/slices/modelSlice';
 import { modelsApi, type AIModel } from '../../api/modelsApi';

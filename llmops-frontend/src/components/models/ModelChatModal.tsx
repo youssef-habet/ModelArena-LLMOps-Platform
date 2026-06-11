@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { modelsApi, type AIModel } from '../../api/modelsApi';
 
 interface ModelChatModalProps {

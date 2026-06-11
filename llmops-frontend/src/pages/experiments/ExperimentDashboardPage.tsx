@@ -78,7 +78,7 @@ export default function ExperimentDashboardPage() {
     csvContent += headers.join(",") + "\n";
 
     // Build Rows
-    modelRuns[0].rows.forEach((_, rowIndex) => {
+    modelRuns[0].rows.forEach((_:any, rowIndex:number) => {
       const rowData = [
         rowIndex + 1,
         `"${modelRuns[0].rows[rowIndex].input.replace(/"/g, '""')}"`,
@@ -196,7 +196,8 @@ export default function ExperimentDashboardPage() {
                 <YAxis stroke="#888" fontSize={12} tickLine={false} axisLine={false} domain={[0, 100]} />
                 <Tooltip contentStyle={{ backgroundColor: '#111', border: '1px solid #333', borderRadius: '12px' }} itemStyle={{ color: '#fff', fontWeight: 'bold' }} cursor={{ fill: 'rgba(255,255,255,0.05)' }} />
                 <Bar dataKey="score" radius={[6, 6, 0, 0]} maxBarSize={60}>
-                  {barChartData.map((entry, index) => (
+                  // LA LIGNE CORRIGÉE :
+                  {barChartData.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={index === 0 ? '#10b981' : '#3b82f6'} fillOpacity={0.9} />
                   ))}
                 </Bar>

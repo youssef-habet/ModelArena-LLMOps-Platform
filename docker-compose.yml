@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./llmops-backend 
+    image: youssefhabet/modelarena-backend:latest
+    container_name: modelarena_backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./llmops-backend/.env 
+    networks:
+      - modelarena-net
+
+  frontend:
+    build: 
+      context: ./llmops-frontend 
+    image: youssefhabet/modelarena-frontend:latest
+    container_name: modelarena_frontend
+    ports:
+      - "80:80" 
+    depends_on:
+      - backend 
+    networks:
+      - modelarena-net
+
+networks:
+  modelarena-net:
+    driver: bridge

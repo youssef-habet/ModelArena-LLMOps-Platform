@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { datasetsApi, type Dataset } from '../../api/datasetsApi';
 
 interface UploadDatasetModalProps {

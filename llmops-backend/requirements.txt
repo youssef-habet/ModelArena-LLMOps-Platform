@@ -1,0 +1,18 @@
+# --- Serveur Web & API ---
+fastapi
+uvicorn
+pydantic
+python-dotenv
+
+# --- Base de données ---
+supabase
+
+# --- IA & LLMs ---
+google-generativeai
+openai
+
+# --- Data Science & NLP ---
+pandas
+rouge-score
+nltk
+python-multipart

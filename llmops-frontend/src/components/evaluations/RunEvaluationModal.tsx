@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { evaluationsApi } from '../../api/evaluationsApi';
 import { modelsApi, type AIModel } from '../../api/modelsApi';
 import { datasetsApi, type Dataset } from '../../api/datasetsApi';
